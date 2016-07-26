@@ -213,6 +213,120 @@
 //    l2.push_back(6); l2.push_back(7); l2.push_back(8);
 //    cout << "Count: " << get_count(get_ml(1, l1, l2)) << endl;
 //}
+//void test_get_count2() {
+//    
+//    vector<int> v1,v2;
+//    responce_fl rfl;
+//    
+//    v1.push_back(1); v1.push_back(2); v1.push_back(7); v1.push_back(11); v1.push_back(13);
+//    v2.push_back(4); v2.push_back(5); v2.push_back(8); v2.push_back(10);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 5" << endl;
+//    
+//    v1.clear(); v2.clear(); 
+//    v1.push_back(5); v1.push_back(6); v1.push_back(7); v1.push_back(8);
+//    v2.push_back(2); v2.push_back(3);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 2"<< endl;
+//    
+//    v1.clear(); v2.clear(); 
+//    v1.push_back(1); v1.push_back(2); v1.push_back(8);
+//    v2.push_back(1); v2.push_back(4); v2.push_back(6);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 4"<< endl;
+//
+//    v1.clear(); v2.clear(); 
+//    v1.push_back(2); v1.push_back(4); v1.push_back(6);
+//    v2.push_back(2); v2.push_back(4); v2.push_back(5);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 4"<< endl;
+//    
+//    v1.clear(); v2.clear(); 
+//    v1.push_back(2); v1.push_back(4); v1.push_back(6);
+//    v2.push_back(2); v2.push_back(4); v2.push_back(6);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 3"<< endl;
+//
+//    v1.clear(); v2.clear();
+//    v1.push_back(1); v1.push_back(2); v1.push_back(5);
+//    v2.push_back(1); v2.push_back(2); v2.push_back(5); v2.push_back(10);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 4"<< endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(2); v1.push_back(10); v1.push_back(11); v1.push_back(13);
+//    v2.push_back(2); v2.push_back(10); v2.push_back(11);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 4"<< endl;
+//
+//    v1.clear(); v2.clear();
+//    v1.push_back(2);
+//    v2.push_back(1);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 2"<< endl;
+//
+//    v1.clear(); v2.clear();
+//    v1.push_back(1);
+//    v2.push_back(2);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 2"<< endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(10);
+//    v2.push_back(10);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 1"<< endl;
+//
+//    v1.clear(); v2.clear();
+//    v1.push_back(-5);v1.push_back(4);
+//    v2.push_back(-5);v2.push_back(1);v2.push_back(2);v2.push_back(3);v2.push_back(6);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 4"<< endl;
+//
+//    v1.clear(); v2.clear();
+//    v1.push_back(-5);v1.push_back(14);
+//    v2.push_back(-5);v2.push_back(1);v2.push_back(2);v2.push_back(3);v2.push_back(6);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 3"<< endl;
+//
+//    v1.clear(); v2.clear();
+//    v1.push_back(0); v1.push_back(1); v1.push_back(3); v1.push_back(4);
+//    v2.push_back(0); v2.push_back(1); v2.push_back(3); v2.push_back(4); v2.push_back(5);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 5"<< endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(0);
+//    v2.push_back(0); v2.push_back(5); v2.push_back(6); v2.push_back(7); v2.push_back(8);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 2"<< endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(1); v1.push_back(2); v1.push_back(4); v1.push_back(6); v1.push_back(8); v1.push_back(9);
+//    v2.push_back(1);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 2" << endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(1); v1.push_back(11); v1.push_back(22); v1.push_back(23); v1.push_back(56); v1.push_back(57); v1.push_back(89); v1.push_back(100);
+//    v2.push_back(2); v2.push_back(12); v2.push_back(23); v2.push_back(24); v2.push_back(25); v2.push_back(28); v2.push_back(100); v2.push_back(101);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 8" << endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(2); v1.push_back(3); v1.push_back(4);
+//    v2.push_back(1); v2.push_back(2); v2.push_back(3);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 4" << endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(10); v1.push_back(11); v1.push_back(12); v1.push_back(13); v1.push_back(14);
+//    v2.push_back(1); v2.push_back(2); v2.push_back(3); v2.push_back(4); v2.push_back(5);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 2"<< endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(1); v1.push_back(5); v1.push_back(6); v1.push_back(7); v1.push_back(12);
+//    v2.push_back(2); v2.push_back(3); v2.push_back(4); v2.push_back(8); v2.push_back(9);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 5"<< endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(2); v1.push_back(3); v1.push_back(4); v1.push_back(5); v1.push_back(6);
+//    v2.push_back(6); v2.push_back(7); v2.push_back(8);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 2"<< endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(2); v1.push_back(3); v1.push_back(4); v1.push_back(6); v1.push_back(7);
+//    v2.push_back(6); v2.push_back(7); v2.push_back(8);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 4"<< endl;
+//    
+//    v1.clear(); v2.clear();
+//    v1.push_back(2); v1.push_back(3); v1.push_back(4); v1.push_back(6); v1.push_back(17);
+//    v2.push_back(6); v2.push_back(7); v2.push_back(8);
+//    cout << "Count: " << get_count2(get_mv(1, v1, v2)) << " Should: 3"<< endl;
+//}
 //void test_init_ml() {    
 //    lnl = add_a_sort_by_n(lnl, 1, 0);
 //    ml = init_ml(lnl);
