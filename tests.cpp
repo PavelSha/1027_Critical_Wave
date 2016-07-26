@@ -520,3 +520,105 @@
 //    cout << "Size? - " << rfl.is_size << " Numb: " << rfl.numb << endl;
 //}
 // -<------- Prints ------------------------
+//void critic_test() {
+//    clock_t timer;
+//    vector<int> vi;
+//    vector<NV> vnv;
+//    vector<MV> vmv;
+//    vector<MV>::iterator it_vmv;
+//    unsigned int n, i, count, temp_count, test_count;
+//    int k;
+//    n = 1;
+//    timer = clock();
+////    while (n > 0) {
+//        vi.clear();
+//        vi.push_back(-2100000000 - n);
+//        vnv.push_back(get_nv(-2100000000 - n, vi));
+//
+//        vi.clear();
+//        vi.push_back(2100000000 + n);
+//        vnv.push_back(get_nv(2100000000 + n, vi));
+//
+//        for (i = 2; i < 1000; i++) {
+//            vi.clear();
+//            if (i % 2 == 0) k = -2100000000;
+//            else k = 2100000000;
+//            vi.push_back(1000 - i + k + n);
+//            vnv.push_back(get_nv(i % 7 + k + n, vi));
+//        }
+//        sort(vnv.begin(), vnv.end(), sort_comp_nv);
+////        vnv.clear();
+////        n--;
+////    }
+////        cout << " Sort NV * 222: " << (clock() - timer) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+////        print_vnv(vnv);
+//        vnv = make_map_vnv(vnv);
+//        cout << " + make map: " << (clock() - timer) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+//        vnv = sort_each(vnv);
+//        cout << " + sort each: " << (clock() - timer) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+//        vmv = init_mv(vnv);
+//        cout << " + init vmv: " << (clock() - timer) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;
+//
+////        print_vmv(vmv);
+//
+//        count = 0;
+//        for (it_vmv = vmv.begin(); it_vmv != vmv.end(); it_vmv++) {
+//            cout << "1 ! " << endl;
+//            temp_count = get_count2(*it_vmv);
+//            cout << "2 ! " << endl;
+//            if (temp_count > count) count = temp_count;
+//            cout << "3 ! " << endl;
+//        }
+//        cout << "Count: " << count << endl;
+//        vnv.clear(); vmv.clear();
+//        n--;
+////    }
+//    
+//    cout << " 222 tests: " << (clock() - timer) / (double)(CLOCKS_PER_SEC / 1000) << " ms" << endl;    
+//}
+// ->------- Prints ------------------------
+//void print_nv(NV nv) {
+//    vector<int>::iterator it_vi;
+//    vector<int> vi = nv.vi;
+//    cout << nv.n << " -#- ";
+//    for (it_vi = vi.begin(); it_vi != vi.end(); it_vi++) {
+//        cout << *it_vi;
+//        if (it_vi != vi.end()--) cout << ' ';
+//    }
+//}
+//
+//void print_mv(MV mv) {
+//    vector<int>::iterator it_vi;
+//    vector<int> vi1 = mv.vi1, vi2 = mv.vi2;
+//    cout << mv.min << " | ";
+//    cout << "v1: ";
+//    for (it_vi = vi1.begin(); it_vi != vi1.end(); it_vi++) {
+//        cout << *it_vi << ' ';
+//    }
+//    cout << "| " << "v2: ";
+//    for (it_vi = vi2.begin(); it_vi != vi2.end(); it_vi++) {
+//        cout << *it_vi;
+//        if (it_vi != vi2.end()--) cout << ' ';
+//    }
+//}
+//
+//void print_vnv(vector<NV> vnv) {
+//    vector<NV>::iterator it_vnv;
+//    for (it_vnv = vnv.begin(); it_vnv != vnv.end(); it_vnv++) {
+//        print_nv(*it_vnv);
+//        cout << endl;
+//    }
+//}
+//
+//void print_vmv(vector<MV> vmv) {
+//    vector<MV>::iterator it_vmv;
+//    for (it_vmv = vmv.begin(); it_vmv != vmv.end(); it_vmv++) {
+//        print_mv(*it_vmv);
+//        cout << endl;
+//    }
+//}
+//
+//void print_responce_fl(responce_fl rfl) {
+//    cout << "Size? - " << rfl.is_size << " Numb: " << rfl.numb << endl;
+//}
+// -<------- Prints ------------------------
