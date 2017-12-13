@@ -1,6 +1,6 @@
 #include <algorithm>
-#include <iostream>
 #include <vector>
+#include <cstdio>
 
 using namespace std;
 
@@ -88,15 +88,14 @@ responce_fl find_target_v(MV mv) {
     return get_responce_fl(s1 == s2 ? m : m + 1, true);
 }
 
-unsigned int get_count2(MV mv) {
+int get_count2(MV mv) {
     responce_fl rfl = find_target_v(mv);
     if (rfl.is_size) return rfl.numb;
     
     vector<int> vi1 = mv.vi1, vi2 = mv.vi2;
     vector<int>::iterator it_vi1 = vi1.begin(), it_vi2 = vi2.begin(), temp;
     bool is_left_l = rfl.numb == 1;
-    unsigned int count = 0;
-    int curr;
+    int curr, emerg_count = 0, count = 0;
     
     if (is_left_l) {
         curr = *it_vi1;
@@ -113,6 +112,13 @@ unsigned int get_count2(MV mv) {
     bool is_finish = false;
     
     while (it_vi1 != vi1.end() || it_vi2 != vi2.end()) {
+        emerg_count++;
+        
+        if (emerg_count > 2002) { // Emergency exit
+            count = -1;
+            is_finish = true;            
+        }
+        
         if (is_left_l) {
             if (it_vi1 == vi1.end()) is_finish = true;
             while (*it_vi1 <= curr && it_vi1 != vi1.end()) {
@@ -187,13 +193,12 @@ void check() {
     vector<NV> vnv;
     vector<MV> vmv;
     vector<MV>::iterator it_vmv;
-    unsigned int n, i, count, temp_count, test_count;
-    int k, x, y;
+    unsigned int n, i, temp_count, test_count;
+    int k, x, y, count;
     test_count = 0;
-    while (cin >> n) {
+    while (scanf("%u",&n) != EOF) {
         for (i = 0; i < n; i++) {
-            cin >> x;
-            cin >> y;
+            scanf("%d %d", &x, &y);
             vnv = add_vnv(vnv, x, y);
         }
         
@@ -205,12 +210,16 @@ void check() {
         count = 0;
         for (it_vmv = vmv.begin(); it_vmv != vmv.end(); it_vmv++) {
             temp_count = get_count2(*it_vmv);
+            if (temp_count == -1) {
+                count = temp_count;
+                break;
+            }
             if (temp_count > count) count = temp_count;
         }
-        cout << count << endl;
+        printf("%u\n", count);
         vnv.clear(); vmv.clear();
         test_count++;
-        if (test_count > MAX_COUNT_TEST) break;;
+        if (test_count > MAX_COUNT_TEST) break;
     }
 }
 
