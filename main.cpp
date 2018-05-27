@@ -24,25 +24,25 @@ struct responce_fl {
 
 
 NV get_nv(int n, vector<int> vi) {
-    NV nv; nv.n = n; nv.vi = vi;
+    NV nv = { n , vi };
     return nv;
 }
 
 MV get_mv(int m, vector<int> vi1, vector<int> vi2) {
-    MV mv; mv.min = m; mv.vi1 = vi1; mv.vi2 = vi2;
+    MV mv = { m, vi1, vi2 };
     return mv;
 }
 
 responce_fl get_responce_fl(unsigned int n, bool b) {
-    responce_fl rfl; rfl.numb = n; rfl.is_size = b;
+    responce_fl rfl = {n, b};
     return rfl;
 }
 
-bool sort_comp_nv(NV nv1, NV nv2) {
+inline bool sort_comp_nv(NV nv1, NV nv2) {
     return nv1.n < nv2.n;
 }
 
-int Min(int a, int b) {
+inline int Min(int a, int b) {
     return a < b ? a : b;
 }
 
